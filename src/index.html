@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Signup Automator</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/floating-labels.css" rel="stylesheet"/>
+    <link href="assets/cover.css" rel="stylesheet"/>
+    <script>window.$ = window.jQuery = require('./assets/jquery/jquery-3.4.1.min.js');</script>
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 >Signup Automation Expert!</h3>
+            <!-- <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Contact</a>
+            </nav> -->
+          </div>
+        </header>
+      
+        <main role="main" class="inner cover">
+          <!-- <h1 class="cover-heading">Cover your page.</h1>
+          <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+          <p class="lead">
+            <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+          </p> -->
+          <form id="process-form" class="form-signin" >
+            <!-- <div class="text-center mb-4">
+              <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+              <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+              <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+            </div> -->
+            <input type="file" id="csv-file" style="opacity: 0;" required/>
+            <div class="form-label-group" style="text-align: left;">
+              <input type="text" id="csv-file-path" class="form-control" placeholder="CSV File" required="" autofocus=""style="cursor: pointer;" readonly >
+              <label for="csv-file-path">CSV File</label>
+            </div>
+          
+            <div class="form-label-group" style="text-align: left;">
+              <input type="text" id="form-url" class="form-control" placeholder="Form URL" required="" >
+              <label for="form-url">Form URL</label>
+            </div>
+          
+            <!-- <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div> -->
+            <p class="lead">
+                <button id="start" class="btn btn-lg btn-secondary">Start</button>
+              </p>
+            <!-- <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button> -->
+            <!-- <p class="mt-5 mb-3 text-muted text-center">© 2017-2019</p> -->
+          </form>
+        </main>
+      
+        <footer class="mastfoot mt-auto">
+          <div class="inner">
+            <p>Designed and developed by <a href="javascript:void()">Codebloom</a>.</p>
+          </div>
+        </footer>
+      </div>
+    <!-- <input type="text" id="form-url" value="https://quicksignup.theconversionpros.com/sl/p1c3/" />
+    <button type="button" onclick="start()">Start</button> -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
