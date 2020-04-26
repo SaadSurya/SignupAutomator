@@ -37,8 +37,8 @@
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
       "github_repository": {
-        "owner": "",
-        "name": ""
+        "owner": "SaadSurya",
+        "name": "SignupAutomator"
       },
       "windowsStoreConfig": {
         "packageName": "",
