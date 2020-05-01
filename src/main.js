@@ -1,5 +1,4 @@
 const electron = require('electron')
-const csvparser = require("javascript-csv");
 
 $(function(){
     $('#csv-file-path').on('click', function(){
@@ -57,7 +56,7 @@ async function getEntriesFromFile(){
         let file = $('#csv-file')[0].files[0];
         if(file.name.endsWith('.csv')) {
             let data = await (new Response(file)).text();
-            return csvparser.toArrays(data);
+            return $.csv.toArrays(data);
         } else {
             alert('Please select a CSV file.')
         }

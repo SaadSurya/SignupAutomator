@@ -2,61 +2,57 @@
   "name": "signupautomator",
   "productName": "Signup Automator",
   "version": "1.0.0",
-  "description": "An application to automate signup form submission for the given form URL.",
+  "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint src --color"
+    "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "SAAD SURYA",
+  "author": {
+    "name": "Saad Surya",
+    "email": "saadsurya@hotmail.com"
+  },
   "license": "MIT",
   "config": {
     "forge": {
-      "make_targets": {
-        "win32": [
-          "squirrel"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "deb",
-          "rpm"
-        ]
-      },
-      "electronPackagerConfig": {
-        "packageManager": "yarn"
-      },
-      "electronWinstallerConfig": {
-        "name": "signupautomator"
-      },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
-      "github_repository": {
-        "owner": "SaadSurya",
-        "name": "SignupAutomator"
-      },
-      "windowsStoreConfig": {
-        "packageName": "",
-        "name": "signupautomator"
-      }
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "signupautomator"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
     }
   },
   "dependencies": {
-  	"electron-compile": "^6.4.4",
-	"electron-squirrel-startup": "^1.0.0",
-    "javascript-csv": "^1.0.7",
-    "jquery": "^3.5.0"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
-   "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "electron-prebuilt-compile": "7.2.1",
-    "electron-forge": "^5.2.4"
+    "@electron-forge/cli": "6.0.0-beta.51",
+    "@electron-forge/maker-deb": "6.0.0-beta.51",
+    "@electron-forge/maker-rpm": "6.0.0-beta.51",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.51",
+    "@electron-forge/maker-zip": "6.0.0-beta.51",
+    "electron": "8.2.5"
   }
 }
