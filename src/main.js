@@ -17,7 +17,7 @@ function start (){
                                 width: 800,
                                 height: 600,
                                 webPreferences: {
-                                     nodeIntegration: true
+                                     nodeIntegration: false
                                 },
                                 parent: electron.remote.getCurrentWindow()
                             });
@@ -25,17 +25,21 @@ function start (){
             //      console.log(fullname + " from inside ready to show.");
             // });
             let formUrl = $('#form-url').val();
-            let script = 'document.getElementsByName("fullName")[0].value = "@FullName"; ' + 
-                            'document.getElementsByName("email")[0].value = "@Email"; ' + 
-                            'document.getElementsByTagName("button")[0].click();'
+            // let script = 'document.getElementsByName("fullName")[0].value = "@FullName"; ' + 
+            //                 'document.getElementsByName("email")[0].value = "@Email"; ' + 
+            //                 'document.getElementsByTagName("button")[0].click();'
+            let script = 'var emailInput = document.getElementsByName("email")[0]; emailInput.value = "@Email"; jQuery("[name=\'email\']").change(); ' + 
+                            'document.getElementById("nf-field-135").click();'
             for(let i = 0; i < entries.length; i++){
                 let entry = entries[i];
-                let fullname = entry[0] + " " + entry[1];
-                let email = entry[2];
+                // let fullname = entry[0] + " " + entry[1];
+                // let email = entry[2];
+                let email = entry[0];
                 win.webContents.stop();
                 win.loadURL(formUrl);
-                win.webContents.executeJavaScript(script.replace('@FullName', fullname).replace('@Email', email));
-                await new Promise(r => setTimeout(r, 10000));
+                //win.webContents.executeJavaScript(script.replace('@FullName', fullname).replace('@Email', email));
+                win.webContents.executeJavaScript(script.replace('@Email', email));
+                await new Promise(r => setTimeout(r, 15000));
             }
             win.close();
             win.destroy();
